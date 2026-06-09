@@ -1,0 +1,59 @@
+{
+  "id": "/",
+  "name": "SIPA OS",
+  "short_name": "SIPA",
+  "description": "Cognitive infrastructure for neurodivergent minds",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "tabbed", "standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#0d0a15",
+  "theme_color": "#7b2fff",
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "handle_links": "preferred",
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "screenshots": [
+    { "src": "/screenshot-wide.png", "sizes": "1280x720", "type": "image/png", "form_factor": "wide", "label": "SIPA OS home" },
+    { "src": "/screenshot-narrow.png", "sizes": "720x1280", "type": "image/png", "form_factor": "narrow", "label": "SIPA OS mobile" }
+  ],
+  "shortcuts": [
+    { "name": "Dashboard", "short_name": "Dashboard", "description": "Open SIPA OS dashboard", "url": "/dashboard", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Chat with SIPA", "short_name": "Chat", "description": "Open neurodivergent-aware AI chat", "url": "/chat", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Ask", "short_name": "Ask", "description": "Quick question to SIPA", "url": "/ask", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Art", "short_name": "Art", "description": "Soul In PsyAbstract artworks", "url": "/art", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "GET",
+    "params": { "title": "title", "text": "text", "url": "url" }
+  },
+  "protocol_handlers": [
+    { "protocol": "web+sipa", "url": "/?intent=%s" }
+  ],
+  "scope_extensions": [
+    { "origin": "https://app.sipa-os.org" },
+    { "origin": "https://game.sipa-os.org" }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "note_taking": {
+    "new_note_url": "/brain-dump"
+  },
+  "related_applications": [
+    { "platform": "webapp", "url": "https://neuropower.sipa-os.org/site.webmanifest" }
+  ],
+  "categories": ["productivity", "health", "utilities", "lifestyle", "medical"]
+}
