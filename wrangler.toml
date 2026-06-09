@@ -1,0 +1,14 @@
+name = "sipa-neuropower-hercules"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+routes = [
+  { pattern = "neuropower.sipa-os.org/*", zone_name = "sipa-os.org" }
+]
+
+main = "worker.js"
+
+[assets]
+directory = "./"
+binding = "ASSETS"
+not_found_handling = "single-page-application"

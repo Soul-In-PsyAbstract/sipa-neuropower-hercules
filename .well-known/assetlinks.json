@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "org.sipa_os.neuropower.twa",
+    "sha256_cert_fingerprints": ["36:03:17:30:40:D6:B0:D5:F1:E9:A9:0B:C6:55:A3:F7:59:93:B2:D2:91:09:B2:4C:12:7D:C9:23:87:D1:17:D3"]
+  }
+}]
