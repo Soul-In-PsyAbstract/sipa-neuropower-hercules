@@ -1,0 +1,22 @@
+# SIPA OS
+
+> Cognitive scaffolding for neurodivergent minds (ADHD/BPD). Your external brain, built for how you actually think. Built by Aelin AquaSoul / Soul In PsyAbstract — a calm, modular system that replaces broken executive function with quiet, supportive infrastructure.
+
+SIPA OS is an app for neurodivergent people. The product centers on four cognitive modules: Structure Engine, Emotional Radar, ADHD Focus, and BPD Crisis Protocol. No sensory overload, no FOMO, no aggressive monetization.
+
+## Pages
+
+- [Home](/): Tagline, modules, founder story, community voices.
+- [About](/about): Founder & team. Who SIPA is for.
+- [Story](/story): Origin story, message from Marina, timeline.
+- [Manifest](/manifest): Protocol 0 principles.
+- [Community](/community): Neurodivergent voices and shared posts.
+- [FAQ](/faq): Common questions about SIPA and neurodivergent design.
+- [Dashboard](/dashboard): Authenticated module dashboard.
+- [Sign In](/signin): Account sign-in / sign-up.
+
+## Optional
+
+- [Terms](/terms)
+- [Privacy](/privacy)
+- [Cookies](/cookies)

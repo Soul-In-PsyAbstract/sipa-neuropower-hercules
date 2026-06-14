@@ -1,0 +1,67 @@
+{
+  "id": "/",
+  "name": "SIPA OS",
+  "short_name": "SIPA",
+  "description": "Cognitive infrastructure for neurodivergent minds",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#0d0a15",
+  "theme_color": "#7b2fff",
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "handle_links": "preferred",
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "1024x1024", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icon-512.png", "sizes": "1024x1024", "type": "image/png", "purpose": "maskable" }
+  ],
+  "screenshots": [
+    { "src": "/screenshot-wide.png", "sizes": "1280x720", "type": "image/png", "form_factor": "wide", "label": "SIPA OS home" },
+    { "src": "/screenshot-narrow.png", "sizes": "720x1280", "type": "image/png", "form_factor": "narrow", "label": "SIPA OS mobile" },
+    { "src": "/screenshot-dashboard-wide.png", "sizes": "1280x720", "type": "image/png", "form_factor": "wide", "label": "Dashboard" },
+    { "src": "/screenshot-dashboard-narrow.png", "sizes": "720x1280", "type": "image/png", "form_factor": "narrow", "label": "Dashboard mobile" },
+    { "src": "/screenshot-chat-wide.png", "sizes": "1280x720", "type": "image/png", "form_factor": "wide", "label": "AI Chat" },
+    { "src": "/screenshot-chat-narrow.png", "sizes": "720x1280", "type": "image/png", "form_factor": "narrow", "label": "AI Chat mobile" },
+    { "src": "/screenshot-art-wide.png", "sizes": "1280x720", "type": "image/png", "form_factor": "wide", "label": "Art gallery" },
+    { "src": "/screenshot-art-narrow.png", "sizes": "720x1280", "type": "image/png", "form_factor": "narrow", "label": "Art gallery mobile" },
+    { "src": "/screenshot-ask-wide.png", "sizes": "1280x720", "type": "image/png", "form_factor": "wide", "label": "Ask SIPA" },
+    { "src": "/screenshot-ask-narrow.png", "sizes": "720x1280", "type": "image/png", "form_factor": "narrow", "label": "Ask SIPA mobile" }
+  ],
+  "shortcuts": [
+    { "name": "Dashboard", "short_name": "Dashboard", "description": "Open SIPA OS dashboard", "url": "/dashboard", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Chat with SIPA", "short_name": "Chat", "description": "Open neurodivergent-aware AI chat", "url": "/chat", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Ask", "short_name": "Ask", "description": "Quick question to SIPA", "url": "/ask", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Art", "short_name": "Art", "description": "Soul In PsyAbstract artworks", "url": "/art", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "protocol_handlers": [
+    { "protocol": "web+sipa", "url": "/?intent=%s" }
+  ],
+  "categories": ["productivity", "health", "utilities", "lifestyle", "medical", "note_taking"],
+  "file_handlers": [
+    {
+      "action": "/open",
+      "accept": {
+        "text/plain": [".txt"],
+        "text/markdown": [".md"],
+        "application/json": [".json"]
+      }
+    }
+  ]
+}
