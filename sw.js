@@ -1,4 +1,4 @@
-const CACHE = 'sipa-os-v3';
+const CACHE = 'sipa-os-v4';
 const OFFLINE_URL = '/';
 
 self.addEventListener('install', e => {

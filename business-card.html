@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Business Card — Aelin AquaSoul</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #111018;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 48px;
+    padding: 48px 24px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .label {
+    color: #555;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  /* Card base — standard business card ratio 85×54mm → 680×432px */
+  .card {
+    width: 680px;
+    height: 380px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  /* ── ENGLISH CARD (front) ────────────────────────── */
+  .card-en {
+    background: linear-gradient(135deg, #0d0a15 0%, #150d22 60%, #0d0a15 100%);
+    border: 1px solid #7b2fff33;
+    box-shadow: 0 0 80px #7b2fff18, 0 24px 64px #00000088;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 52px;
+  }
+
+  .card-en .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .card-en .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .card-en .name em {
+    font-style: italic;
+    color: #c084fc;
+  }
+
+  .card-en .title {
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 400;
+    color: #7b2fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .card-en .icon-mark {
+    width: 52px;
+    height: 52px;
+    border: 1px solid #7b2fff55;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #7b2fff11;
+  }
+
+  .card-en .icon-mark svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .card-en .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .card-en .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .card-en .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #aaaacc;
+    font-weight: 300;
+  }
+
+  .card-en .contact-row .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #7b2fff;
+    flex-shrink: 0;
+  }
+
+  .card-en .award {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+
+  .card-en .award .award-text {
+    font-size: 10px;
+    color: #c084fc88;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .card-en .award .award-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #c084fc;
+    margin-top: 2px;
+  }
+
+  .qr-group {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  .qr-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .qr-item img {
+    width: 68px;
+    height: 68px;
+    border-radius: 6px;
+    border: 1px solid #7b2fff44;
+  }
+
+  .card-he .qr-item img {
+    border: 1px solid #00f5ff44;
+  }
+
+  .qr-item span {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #c084fc88;
+  }
+
+  .card-he .qr-item span {
+    color: #00f5ff88;
+  }
+
+  .card-en .stripe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #7b2fff, #c084fc, #00f5ff, #7b2fff);
+    background-size: 300% 100%;
+  }
+
+  .card-en .glow {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, #7b2fff18 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ── HEBREW CARD (back) ─────────────────────────── */
+  .card-he {
+    background: linear-gradient(135deg, #0a0d15 0%, #0d1522 60%, #0a0d15 100%);
+    border: 1px solid #00f5ff22;
+    box-shadow: 0 0 80px #00f5ff10, 0 24px 64px #00000088;
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 52px;
+  }
+
+  .card-he .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .card-he .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    direction: ltr;
+  }
+
+  .card-he .name em {
+    font-style: italic;
+    color: #00f5ff;
+  }
+
+  .card-he .title {
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #00bcd4;
+    letter-spacing: 1px;
+    text-align: right;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .card-he .icon-mark {
+    width: 52px;
+    height: 52px;
+    border: 1px solid #00f5ff33;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00f5ff08;
+  }
+
+  .card-he .icon-mark svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .card-he .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .card-he .award {
+    text-align: left;
+    direction: ltr;
+  }
+
+  .card-he .award .award-text {
+    font-size: 10px;
+    color: #00f5ff66;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .card-he .award .award-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #00f5ff;
+    margin-top: 2px;
+  }
+
+  .card-he .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+
+  .card-he .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #aaaacc;
+    font-weight: 300;
+    direction: ltr;
+  }
+
+  .card-he .contact-row .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #00f5ff;
+    flex-shrink: 0;
+  }
+
+  .card-he .stripe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00f5ff, #7b2fff, #00f5ff);
+    background-size: 300% 100%;
+  }
+
+  .card-he .glow {
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, #00f5ff10 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ── COMPANY line ─── */
+  .company-en {
+    position: absolute;
+    top: 50%;
+    right: 52px;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #7b2fff44;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .company-he {
+    position: absolute;
+    top: 50%;
+    left: 52px;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: center;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #00f5ff33;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* print */
+  @media print {
+    body { background: white; gap: 0; padding: 0; }
+    .card { page-break-after: always; box-shadow: none; }
+    .label { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <div class="label">Front · English</div>
+  <div class="card card-en">
+    <div class="glow"></div>
+    <span class="company-en">Soul In PsyAbstract | SIPA OS</span>
+
+    <div class="top">
+      <div>
+        <div class="name">Aelin <em>AquaSoul</em></div>
+        <div class="title">Founder &amp; CEO &nbsp;·&nbsp; AI Architect</div>
+      </div>
+      <div class="icon-mark">
+        <!-- SIPA hexagon mark -->
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="14,2 25,8 25,20 14,26 3,20 3,8" stroke="#c084fc" stroke-width="1.2" fill="none"/>
+          <polygon points="14,7 21,11 21,19 14,23 7,19 7,11" stroke="#7b2fff" stroke-width="0.8" fill="#7b2fff18"/>
+          <circle cx="14" cy="15" r="2.5" fill="#c084fc"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="contact">
+        <div class="contact-row"><span class="dot"></span>sipa-core@sipa-os.org</div>
+        <div class="contact-row"><span class="dot"></span>sipa-os.org</div>
+        <div class="contact-row"><span class="dot"></span>+972-52-507-4743</div>
+        <div class="contact-row"><span class="dot"></span>linkedin.com/in/aelin-aquasoul</div>
+      </div>
+      <div class="award">
+        <div class="award-text">ICON 2026</div>
+        <div class="qr-group">
+          <div class="qr-item">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Flinkedin.com%2Fin%2Faelin-aquasoul-8ba489404&size=200x200&format=png&ecc=H&color=c084fc&bgcolor=0d0a15" alt="LinkedIn"/>
+            <span>LinkedIn</span>
+          </div>
+          <div class="qr-item">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fcalendly.com%2Fsoulinpsyabstract%2F30min&size=200x200&format=png&ecc=H&color=c084fc&bgcolor=0d0a15" alt="Calendly"/>
+            <span>Book call</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stripe"></div>
+  </div>
+</div>
+
+<div>
+  <div class="label">Back · Hebrew</div>
+  <div class="card card-he">
+    <div class="glow"></div>
+    <span class="company-he">Soul In PsyAbstract | SIPA OS</span>
+
+    <div class="top">
+      <div class="icon-mark">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="14,2 25,8 25,20 14,26 3,20 3,8" stroke="#00f5ff" stroke-width="1.2" fill="none"/>
+          <polygon points="14,7 21,11 21,19 14,23 7,19 7,11" stroke="#00bcd4" stroke-width="0.8" fill="#00f5ff08"/>
+          <circle cx="14" cy="15" r="2.5" fill="#00f5ff"/>
+        </svg>
+      </div>
+      <div>
+        <div class="name">Aelin <em>AquaSoul</em></div>
+        <div class="title">מייסדת ומנכ"לית &nbsp;·&nbsp; ארכיטקטית AI</div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="award">
+        <div class="award-text">ICON 2026</div>
+        <div class="qr-group">
+          <div class="qr-item">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Flinkedin.com%2Fin%2Faelin-aquasoul-8ba489404&size=200x200&format=png&ecc=H&color=00f5ff&bgcolor=0a0d15" alt="LinkedIn"/>
+            <span>LinkedIn</span>
+          </div>
+          <div class="qr-item">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fcalendly.com%2Fsoulinpsyabstract%2F30min&size=200x200&format=png&ecc=H&color=00f5ff&bgcolor=0a0d15" alt="Calendly"/>
+            <span>זמן פגישה</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="contact-row">sipa-core@sipa-os.org<span class="dot"></span></div>
+        <div class="contact-row">sipa-os.org<span class="dot"></span></div>
+        <div class="contact-row">+972-52-507-4743<span class="dot"></span></div>
+        <div class="contact-row">linkedin.com/in/aelin-aquasoul<span class="dot"></span></div>
+      </div>
+    </div>
+
+    <div class="stripe"></div>
+  </div>
+</div>
+
+</body>
+</html>
